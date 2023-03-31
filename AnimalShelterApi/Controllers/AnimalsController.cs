@@ -4,7 +4,10 @@ using AnimalShelterApi.Models;
 
 namespace AnimalShelterApi.Controllers
 {
-  [Route("api/[controller]")]
+  [ApiVersion("1.0")]
+  [ApiVersion("2.0")]
+  [Route("[controller]")]
+  [Route("v{version:apiVersion}/[controller]")]
   [ApiController]
   public class AnimalsController : ControllerBase
   {
@@ -27,7 +30,7 @@ namespace AnimalShelterApi.Controllers
       return await query.ToListAsync();
     }
 
-        // POST api/animals
+    // POST api/animals
     [HttpPost]
     public async Task<ActionResult<Animal>> Post(Animal animal)
     {
@@ -83,7 +86,7 @@ namespace AnimalShelterApi.Controllers
     {
       return _db.Animals.Any(e => e.AnimalId == id);
     }
-        // DELETE: api/Animals/5
+    // DELETE: api/Animals/5
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteAnimal(int id)
     {
