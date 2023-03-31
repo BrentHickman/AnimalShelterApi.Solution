@@ -5,8 +5,8 @@ using AnimalShelterApi.Models;
 namespace AnimalShelterApi.Controllers
 {
   [ApiVersion("1.0")]
-  [ApiVersion("2.0")]
-  [Route("[controller]")]
+  // [ApiVersion("2.0")]
+  // [Route("[controller]")]
   [Route("v{version:apiVersion}/[controller]")]
   [ApiController]
   public class AnimalsController : ControllerBase
