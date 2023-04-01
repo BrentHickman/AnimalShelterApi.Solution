@@ -2,11 +2,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using AnimalShelterApi.Models;
 
-namespace AnimalShelterApi.Controllers
+namespace AnimalShelterApi.Controllers.V2
 {
-  [ApiVersion("1.0")]
-  // [ApiVersion("2.0")]
-  // [Route("[controller]")]
+  [ApiVersion("2.0")]
   [Route("v{version:apiVersion}/[controller]")]
   [ApiController]
   public class AnimalsController : ControllerBase
@@ -20,12 +18,16 @@ namespace AnimalShelterApi.Controllers
 
     // GET: api/Animals
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Animal>>> Get(string species)
+    public async Task<ActionResult<IEnumerable<Animal>>> Get(string species, bool young)
     {
       IQueryable<Animal> query = _db.Animals.AsQueryable();
       if (species != null)
       {
         query = query.Where(entry => entry.Species == species);
+      }
+        if (young == true)
+      {
+        query = query.Where(entry => entry.AgeYears <=1);
       }
       return await query.ToListAsync();
     }
