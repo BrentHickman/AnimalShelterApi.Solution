@@ -15,7 +15,7 @@
 * Swagger UI
 
 
-## AnimalShelterApi is an .
+## AnimalShelterApi is an API for Cats and Dogs available for adoption. Users can filter by species in V1. In V2 you can also narrow results to only puppies or kittens. 
 
 ## Setup/Installation Requirements
 
@@ -62,13 +62,21 @@
 
 * Endpoints for AnimalShelterAPI V2 :
 >GET https://localhost:5001/v2/animals
+
 >GET https://localhost:5001/v2/animals/{id}
+
 >GET https://localhost:5001/v2/Animals?species={species}
+
 >GET https://localhost:5001/v2/Animals?young=true
+
 >GET https://localhost:5001/v2/Animals?species={species}&young=true
+
 >POST https://localhost:5001/v2/animals
+
 >PUT https://localhost:5001/v2/animals/{id}
+
 >DELETE https://localhost:5001/v2/animals/{id}
+
 * The difference between V1 and V2 lies in the GET query paramaters available.
 * V1 supports filtering the API by {species} with:
 >GET https://localhost:5001/v1/Animals?species={species}
