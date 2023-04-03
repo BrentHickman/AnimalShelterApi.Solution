@@ -49,11 +49,17 @@
 * You can change between versions using the 'Select a definition' dropdown in the top right of Swagger UI.
 * Endpoints for AnimalShelterAPI V1 :
 >GET https://localhost:5001/v1/animals
+
 >GET https://localhost:5001/v1/animals/{id}
+
 >GET https://localhost:5001/v1/Animals?species={species}
+
 >POST https://localhost:5001/v1/animals
+
 >PUT https://localhost:5001/v1/animals/{id}
+
 >DELETE https://localhost:5001/v1/animals/{id}
+
 * Endpoints for AnimalShelterAPI V2 :
 >GET https://localhost:5001/v2/animals
 >GET https://localhost:5001/v2/animals/{id}
